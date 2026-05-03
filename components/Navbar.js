@@ -1,45 +1,57 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import styles from './Navbar.module.css';
-import { Download, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Download } from 'lucide-react';
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        const fn = () => setScrolled(window.scrollY > 30);
+        window.addEventListener('scroll', fn);
+        return () => window.removeEventListener('scroll', fn);
     }, []);
 
     return (
-        <div className={styles.navWrapper}>
-            <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-                <div className={styles.logo}>AETHER</div>
+        <motion.div
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="fixed top-0 left-0 right-0 z-50 flex justify-center px-5 pt-6 pointer-events-none"
+        >
+            <nav className="pointer-events-auto w-full max-w-[440px] flex items-center justify-between px-4 h-10 rounded-full transition-all duration-500 glass">
+                <span className="font-[var(--font-pixel)] text-[15px] tracking-[3px] text-teal">AETHER</span>
 
-                <div className={`${styles.links} ${isOpen ? styles.open : ''}`}>
-                    <a href="#features" onClick={() => setIsOpen(false)}>Features</a>
-                    <a href="#download" onClick={() => setIsOpen(false)}>Download</a>
-                    <a href="#philosophy" onClick={() => setIsOpen(false)}>Philosophy</a>
-
-                    <a href="#download" className={`btn btn-primary ${styles.mobileNavBtn}`} onClick={() => setIsOpen(false)}>
-                        <Download size={16} className={styles.dlIcon} /> Download APK
-                    </a>
+                <div className="hidden sm:flex gap-4 items-center">
+                    <a href="#features" className="text-teal/60 hover:text-teal transition-colors text-[12px] font-medium no-underline">Features</a>
+                    <a href="#preview" className="text-teal/60 hover:text-teal transition-colors text-[12px] font-medium no-underline">Preview</a>
+                    <a href="#download" className="text-teal/60 hover:text-teal transition-colors text-[12px] font-medium no-underline">Download</a>
                 </div>
 
-                <div className={styles.actions}>
-                    <a href="#download" className={`btn btn-primary ${styles.desktopNavBtn}`}>
-                        <Download size={16} className={styles.dlIcon} /> Download APK
-                    </a>
-
-                    <button className={styles.mobileMenu} onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? <X size={24} color="var(--color-pine)" /> : <Menu size={24} color="var(--color-pine)" />}
-                    </button>
-                </div>
+                <button onClick={() => setOpen(!open)} className="sm:hidden p-1 border-none bg-transparent cursor-pointer">
+                    {open ? <X size={18} className="text-teal" /> : <Menu size={18} className="text-teal" />}
+                </button>
             </nav>
-        </div>
+
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                        transition={{ duration: 0.25 }}
+                        className="absolute top-full left-5 right-5 mt-2 glass-heavy rounded-2xl p-4 text-center pointer-events-auto"
+                    >
+                        <a href="#features" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Features</a>
+                        <a href="#preview" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Preview</a>
+                        <a href="#download" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] no-underline">Download</a>
+                        <a href="/assets/aether_v1.apk" download="aether_v1.apk" onClick={() => setOpen(false)} className="mt-3 btn-aether bg-sage text-white w-full rounded-xl text-[13px] h-10 no-underline">
+                            <Download size={14} /> Download APK
+                        </a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
     );
 }

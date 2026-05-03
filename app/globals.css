@@ -1,160 +1,141 @@
-:root {
-  --font-poppins: var(--font-poppins), sans-serif;
-  --font-doto: var(--font-doto), monospace;
+@import "tailwindcss";
 
-  /* Screen-matched Colors */
-  --color-fog: #E5F0ED;
-  /* The light minty background */
-  --color-pine: #285A52;
-  /* Darker teal text and buttons */
-  --color-mint: #C4DEDB;
-  /* Mid teal for highlights */
-  --color-sage: #45756C;
-  /* Medium text */
-  --color-accent: #378076;
-  /* Vibrant teal */
+/* ═══════════════════════════════════════
+   AETHER IMMERSIVE DESIGN SYSTEM
+   ═══════════════════════════════════════ */
 
-  --color-glass-top: rgba(255, 255, 255, 0.6);
-  --color-glass-bot: rgba(255, 255, 255, 0.3);
-  --color-glass-border-top: rgba(255, 255, 255, 0.9);
-  --color-glass-border-bot: rgba(255, 255, 255, 0.2);
+@theme {
+  --color-pine: #2B5548;
+  --color-teal: #3D7A6C;
+  --color-sage: #5A9484;
+  --color-mint: #8FBCB0;
+  --color-foam: #B8D8CF;
+  --color-mist: #D4EAE3;
+  --color-cloud: #E8F4F0;
+  --color-snow: #F5FAF8;
 
-  /* Radii */
-  --radius-sm: 12px;
-  --radius-md: 24px;
-  --radius-lg: 32px;
-  --radius-pill: 100px;
+  --font-body: 'Poppins', sans-serif;
+  --font-pixel: 'Doto', monospace;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-poppins);
-  background-color: var(--color-fog);
-  color: var(--color-sage);
-  min-height: 100vh;
-  overflow-x: hidden;
-  max-width: 100vw;
+/* ── Global Reset ── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
   scroll-behavior: smooth;
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+body {
+  font-family: var(--font-body);
+  color: var(--color-teal);
+  overflow-x: hidden;
 }
 
-/* 
-  Creating the exact pixelated mosaic gradient background 
-  from the app UI using CSS 
-*/
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 100vh;
-  /* Soft gradient base */
-  background: linear-gradient(180deg, #FFFFFF 0%, #D4E8E4 40%, #A2C4BE 100%);
-  z-index: -3;
-}
-
-/* Pixel Mosaic Overlay using heavily scaled background steps */
-body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 100vh;
-  /* Mosaic noise effect approximated via repeating SVG or base64 */
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%23285A52' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-size: 20px 20px;
-  z-index: -2;
-}
-
-/* Typography */
 h1,
 h2,
-h4,
-h5,
-h6 {
-  font-family: var(--font-doto);
-  color: var(--color-pine);
-  margin: 0;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
-h2 {
-  font-size: clamp(28px, 5vw, 48px);
-  line-height: 1.2;
-  letter-spacing: 0;
-}
-
 h3 {
-  font-family: var(--font-doto);
-  font-size: clamp(20px, 3vw, 24px);
-  line-height: 1.3;
+  font-family: var(--font-pixel);
   font-weight: 400;
-  color: var(--color-pine);
-  margin: 0;
 }
 
-.btn {
+/* ── Glassmorphism ── */
+.glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.65));
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(43, 85, 72, 0.08);
+}
+
+.glass-heavy {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.65));
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 48px rgba(43, 85, 72, 0.1);
+}
+
+/* ── Button ── */
+.btn-aether {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
-  padding: 0 40px;
-  border-radius: var(--radius-pill);
-  font-weight: 400;
+  gap: 8px;
+  height: 52px;
+  padding: 0 28px;
+  border-radius: 16px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
   cursor: pointer;
   border: none;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  font-family: var(--font-doto);
-  font-size: 16px;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.btn-primary {
-  background: var(--color-pine);
-  color: white;
-  box-shadow: 0 4px 10px rgba(40, 90, 82, 0.2);
+/* ── Desktop Gate ── */
+.desktop-gate {
+  display: none;
 }
 
-.btn-primary:hover {
-  background: var(--color-accent);
-  box-shadow: 0 8px 20px rgba(40, 90, 82, 0.3);
+@media (min-width: 768px) {
+  .desktop-gate {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    padding: 48px;
+    background: linear-gradient(180deg, #FFF 0%, #E8F4F0 50%, #8FBCB0 100%);
+  }
+
+  .mobile-content {
+    display: none !important;
+  }
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* ── Floating animation ── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
-/* Utility for 'Cool' Gradient Glass Cards */
-.glass-card {
-  background: linear-gradient(135deg, var(--color-glass-top) 0%, var(--color-glass-bot) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-top: 1px solid var(--color-glass-border-top);
-  border-left: 1px solid var(--color-glass-border-top);
-  border-right: 1px solid var(--color-glass-border-bot);
-  border-bottom: 1px solid var(--color-glass-border-bot);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }

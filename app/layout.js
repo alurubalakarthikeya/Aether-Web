@@ -3,19 +3,19 @@ import './globals.css';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-poppins'
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
 });
 
 const doto = Doto({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-doto'
+  variable: '--font-pixel',
 });
 
 export const metadata = {
-  title: 'Aether | Mental Wellness',
-  description: 'A calm space to reflect, understand yourself, and build a better you.',
+  title: 'Aether — Mental Wellness',
+  description: 'A calm space to reflect, understand yourself, and grow.',
 };
 
 export default function RootLayout({ children }) {

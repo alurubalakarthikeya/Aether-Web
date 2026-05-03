@@ -1,39 +1,51 @@
-import React from 'react';
-import styles from './Footer.module.css';
-
-const TwitterIcon = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-    </svg>
-);
-
-const DiscordIcon = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.996 6.505C14.07 6.082 13.067 5.79 12.012 5.568.125 15.932 1.488 23.36 1.488 23.36c2.404 1.764 4.7 1.838 4.7 1.838l1.045-1.42c-2.072-.613-2.868-1.57-2.868-1.57s.24.168.647.404c1.666 1.002 3.865 1.433 6.068 1.547 2.678.138 5.434-.374 7.556-1.547.45-.25.666-.404.666-.404s-.815.975-2.923 1.588l1.028 1.418s2.296-.074 4.7-1.838c0 0 1.406-7.755-10.512-16.854zm-6.262 10.66c-1.127 0-2.036-1.01-2.036-2.25s.91-2.25 2.036-2.25 2.052 1.018 2.036 2.25c0 1.24-.91 2.25-2.036 2.25zm6.544 0c-1.127 0-2.036-1.01-2.036-2.25s.91-2.25 2.036-2.25 2.052 1.018 2.036 2.25c0 1.24-.91 2.25-2.036 2.25z"></path>
-    </svg>
-);
+"use client";
+import { motion } from 'framer-motion';
+import { MessageCircle, Send, Camera, Code, Globe } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
-            <div className={`container ${styles.footerContent}`}>
-                <div className={styles.leftCol}>
-                    <div className={styles.logo}>AETHER</div>
-                    <span className={styles.tagline}>A calm space to reflect, grow and heal.</span>
-                </div>
+        <motion.footer
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="glass-heavy rounded-t-[40px] w-full px-8 pt-12 pb-14 text-center flex flex-col items-center gap-5 mt-10"
+        >
+            <span className="font-[var(--font-pixel)] text-[22px] tracking-[6px] text-teal">AETHER</span>
+            <p className="text-[14px] text-sage max-w-[280px] leading-relaxed font-medium">
+                Taking the race out of healing.
+            </p>
 
-                <div className={styles.rightCol}>
-                    <div className={styles.links}>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Contact</a>
-                    </div>
-                    <div className={styles.socials}>
-                        <a href="#" className={styles.socialIcon}><TwitterIcon /></a>
-                        <a href="#" className={styles.socialIcon}><DiscordIcon /></a>
-                    </div>
-                </div>
+            {/* Social Icons - Using standard Lucide UI icons to avoid import errors */}
+            <div className="flex gap-5 items-center mt-2">
+                <a href="#" className="p-2.5 rounded-full bg-teal/5 text-teal hover:bg-teal hover:text-white transition-all duration-300">
+                    <Camera size={18} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-teal/5 text-teal hover:bg-teal hover:text-white transition-all duration-300">
+                    <Send size={18} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-teal/5 text-teal hover:bg-teal hover:text-white transition-all duration-300">
+                    <MessageCircle size={18} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-teal/5 text-teal hover:bg-teal hover:text-white transition-all duration-300">
+                    <Code size={18} />
+                </a>
             </div>
-        </footer>
+
+            <div className="flex gap-4 items-center text-[13px] font-semibold mt-4 text-teal/70">
+                <a href="#" className="hover:text-teal transition-colors no-underline">Privacy</a>
+                <span className="text-teal/10">•</span>
+                <a href="#" className="hover:text-teal transition-colors no-underline">Terms</a>
+                <span className="text-teal/10">•</span>
+                <a href="#" className="hover:text-teal transition-colors no-underline">Press</a>
+            </div>
+
+            <div className="w-full h-[1px] bg-teal/10 my-2" />
+
+            <p className="text-[11px] text-teal/40 font-medium">
+                © 2026 Aether Mind. All rights reserved. <br />
+                Made for a calmer world.
+            </p>
+        </motion.footer>
     );
 }
