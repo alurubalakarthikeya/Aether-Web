@@ -51,10 +51,10 @@ export default function CompanionShowcase() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="w-full max-w-[500px] glass-heavy p-1 rounded-[40px] relative overflow-hidden mx-auto shadow-[0_32px_64px_-16px_rgba(43,85,72,0.2)]"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="w-full max-w-[500px] glass-heavy p-1 rounded-[40px] relative overflow-hidden mx-auto shadow-[0_32px_64px_-16px_rgba(43,85,72,0.25)] will-change-transform"
                     >
-                        <div className="bg-white/60 backdrop-blur-3xl rounded-[38px] p-7 border border-white/80 relative">
+                        <div className="bg-white/60 backdrop-blur-xl rounded-[38px] p-7 border border-white/80 relative">
                             {/* Message Header */}
                             <div className="flex items-center justify-between mb-10 border-b border-teal/5 pb-5">
                                 <div className="flex items-center gap-3">

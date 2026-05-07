@@ -20,8 +20,8 @@ export default function Hero() {
     return (
         <section className="relative h-[100dvh] flex flex-col overflow-hidden px-6 pt-24" id="hero">
             {/* Ambient glow blobs */}
-            <div className="absolute top-[10%] -left-16 w-64 h-64 rounded-full bg-mint/30 blur-[100px] opacity-40" style={{ animation: 'pulse-glow 8s ease-in-out infinite' }} />
-            <div className="absolute top-[40%] -right-12 w-56 h-56 rounded-full bg-foam/40 blur-[100px] opacity-50" style={{ animation: 'pulse-glow 10s ease-in-out infinite 2s' }} />
+            <div className="absolute top-[10%] -left-16 w-64 h-64 rounded-full bg-mint/30 blur-[100px] opacity-40 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 8s ease-in-out infinite' }} />
+            <div className="absolute top-[40%] -right-12 w-56 h-56 rounded-full bg-foam/40 blur-[100px] opacity-50 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 10s ease-in-out infinite 2s' }} />
 
             {/* Brand + Tagline */}
             <motion.div

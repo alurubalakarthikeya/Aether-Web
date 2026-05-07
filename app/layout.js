@@ -16,6 +16,9 @@ const doto = Doto({
 export const metadata = {
   title: 'AetherMind',
   description: 'A calm space to reflect, understand yourself, and grow.',
+  icons: {
+    icon: '/assets/set-1.png',
+  },
 };
 
 export const viewport = {
