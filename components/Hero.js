@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { NodeBuilder } from './ProductPanels';
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-[100dvh] flex flex-col overflow-hidden px-6 pt-24" id="hero">
+        <section className="relative h-[100dvh] flex flex-col overflow-hidden px-6 pt-24 hero-compact-section" id="hero">
             {/* Ambient glow blobs */}
             <div className="absolute top-[10%] -left-16 w-64 h-64 rounded-full bg-mint/30 blur-[100px] opacity-40 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 8s ease-in-out infinite' }} />
             <div className="absolute top-[40%] -right-12 w-56 h-56 rounded-full bg-foam/40 blur-[100px] opacity-50 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 10s ease-in-out infinite 2s' }} />
@@ -28,7 +29,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
-                className="self-start mt-4 max-w-[90%] relative z-20"
+                className="self-start mt-4 max-w-[90%] relative z-20 hero-compact-text"
             >
                 <div className="flex items-center gap-2 mb-1">
                     <span className="font-[var(--font-pixel)] text-[11px] text-sage tracking-[4px] uppercase">Your Emotional Companion</span>
@@ -40,29 +41,42 @@ export default function Hero() {
             </motion.div>
 
             {/* ── Island scene ── */}
-            <div className="flex-1 flex items-center justify-center relative my-4 perspective-1000">
+            <div className="flex-1 flex items-center justify-center relative my-4 perspective-1000 hero-compact-island">
                 {/* Secondary floating island - Left Middle */}
 
-                <motion.img
-                    src="/assets/floating-island.png"
-                    alt=""
+                <motion.div
                     initial={{ opacity: 0, x: -60, y: 20 }}
                     animate={{ opacity: 0.4, x: -80, y: 0 }}
                     transition={{ duration: 1.5, delay: 0.8 }}
                     className="absolute left-[-40px] top-[40%] w-[40%] blur-[2px] z-0"
                     style={{ animation: 'float-slow 10s ease-in-out infinite' }}
-                />
+                >
+                    <Image
+                        src="/assets/floating-island.png"
+                        alt=""
+                        width={200}
+                        height={200}
+                        className="w-full h-auto"
+                    />
+                </motion.div>
 
                 {/* Main floating island - Pushed down 30px */}
-                <motion.img
-                    src="/assets/floating-island.png"
-                    alt="Floating Island"
+                <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 30 }}
                     transition={{ duration: 1, delay: 0.4 }}
                     className="relative z-10 w-[95%] max-w-[340px] drop-shadow-[0_45px_70px_rgba(43,85,72,0.25)]"
                     style={{ animation: 'float 6s ease-in-out infinite' }}
-                />
+                >
+                    <Image
+                        src="/assets/floating-island.png"
+                        alt="Floating Island"
+                        width={400}
+                        height={400}
+                        priority
+                        className="w-full h-auto"
+                    />
+                </motion.div>
 
 
                 {/* Visual Connection line to next section */}
@@ -97,15 +111,21 @@ export default function Hero() {
                 </div>
 
                 {/* Background elements */}
-                <motion.img
-                    src="/assets/floating-thing.png"
-                    alt=""
+                <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 0.3, scale: 1 }}
                     transition={{ duration: 2, delay: 1 }}
                     className="absolute -right-12 top-[10%] w-[45%] blur-[4px]"
                     style={{ animation: 'float-slow 12s ease-in-out infinite' }}
-                />
+                >
+                    <Image
+                        src="/assets/floating-thing.png"
+                        alt=""
+                        width={250}
+                        height={250}
+                        className="w-full h-auto"
+                    />
+                </motion.div>
             </div>
 
             {/* CTA card ── */}
@@ -113,11 +133,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="glass-heavy rounded-[32px] p-6 pb-12 flex flex-col gap-4 relative z-30 mt-auto -mx-6 mb-0 shadow-[0_-15px_60px_rgba(43,85,72,0.12)] border-b-0"
+                className="glass-heavy rounded-[40px] p-6 pb-12 flex flex-col gap-4 relative z-30 mt-auto -mx-6 mb-4 shadow-[0_-20px_60px_rgba(43,85,72,0.15)] hero-compact-card"
             >
                 <div className="flex flex-col gap-3">
 
-                    <a href="#preview" className="btn-aether bg-white/50 text-sage rounded-2xl h-14 text-[14px] border border-white/80 hover:bg-white/90 no-underline w-full flex items-center justify-center gap-2">
+                    <a href="#preview" className="btn-aether bg-white/60 text-sage rounded-2xl h-14 text-[14px] border border-white/80 hover:bg-white/90 no-underline w-full flex items-center justify-center gap-2 shadow-[inset_0_2px_10px_rgba(61,122,108,0.12)]">
                         Explore the World
                     </a>
                     <a href="/assets/aether_v1.apk" download="aether_v1.apk" className="btn-aether btn-glow bg-teal text-white rounded-2xl h-14 text-[15px] hover:brightness-110 active:scale-95 transition-all no-underline w-full group overflow-hidden">
@@ -145,8 +165,8 @@ export default function Hero() {
                         ))}
                     </div>
                     <div className="flex flex-col items-start translate-x-1">
-                        <span className="text-[12px] text-teal font-bold leading-none">43 active users</span>
-                        <span className="text-[7.5px] text-sage/60 uppercase font-[var(--font-pixel)] tracking-widest mt-1">Live in Aether</span>
+                        <span className="text-[12px] text-teal leading-none">43 Active</span>
+                        <span className="text-[7.5px] text-sage/60 uppercase font-[var(--font-pixel)] tracking-widest mt-1"> Testers in Aether</span>
                     </div>
                 </div>
             </motion.div>

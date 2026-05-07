@@ -5,7 +5,7 @@ import { Heart, Sprout, BookOpen, Sun, Wind } from 'lucide-react';
 
 export function TerminalLog({ className }) {
     return (
-        <motion.div className={`w-[240px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[28px] overflow-hidden shadow-xl ${className}`}>
+        <motion.div className={`w-[240px] bg-white/65 backdrop-blur-2xl border border-white/80 rounded-[28px] overflow-hidden shadow-2xl ${className}`}>
             <div className="bg-teal/5 h-8 flex items-center px-4 border-b border-teal/10">
                 <div className="flex gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-teal/20" />
@@ -30,7 +30,7 @@ export function TerminalLog({ className }) {
 
 export function InsightCard() {
     return (
-        <motion.div className="w-[180px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[28px] p-4 shadow-xl">
+        <motion.div className="w-[180px] bg-white/65 backdrop-blur-2xl border border-white/80 rounded-[28px] p-4 shadow-2xl">
             <div className="flex items-center gap-2 mb-3">
                 <div className="w-7 h-7 rounded-xl bg-mint/20 flex items-center justify-center text-teal">
                     <Sun size={14} />
@@ -56,7 +56,7 @@ export function InsightCard() {
 
 export function HabitSprout() {
     return (
-        <motion.div className="w-[160px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[28px] p-4 shadow-xl">
+        <motion.div className="w-[160px] bg-white/65 backdrop-blur-2xl border border-white/80 rounded-[28px] p-4 shadow-2xl">
             <div className="flex justify-between items-start mb-2">
                 <div className="w-8 h-8 rounded-xl bg-sage/20 flex items-center justify-center text-teal">
                     <Sprout size={16} />
@@ -85,7 +85,7 @@ export function HabitSprout() {
 
 export function NodeBuilder() {
     return (
-        <motion.div className="w-[200px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[32px] p-5 shadow-2xl relative overflow-hidden group">
+        <motion.div className="w-[200px] bg-white/65 backdrop-blur-2xl border border-white/80 rounded-[32px] p-5 shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-2 opacity-20">
                 <Wind size={24} className="text-teal" />
             </div>

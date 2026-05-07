@@ -38,13 +38,13 @@ export default function WorldEnvironment() {
                         transition={{ delay: i * 0.1 }}
                         className={`${theme.bg} p-6 rounded-[32px] border border-white/60 relative overflow-hidden group`}
                     >
-                        <div className="relative z-10 flex items-center justify-between">
+                        <div className="relative z-10 flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-2xl bg-white/40 flex items-center justify-center text-teal flex-shrink-0 transition-transform group-hover:scale-110">
+                                <theme.icon size={18} />
+                            </div>
                             <div>
                                 <h3 className="text-[16px] font-semibold text-teal">{theme.title}</h3>
                                 <p className="text-[12px] text-sage/70 mt-1">{theme.desc}</p>
-                            </div>
-                            <div className="w-10 h-10 rounded-2xl bg-white/40 flex items-center justify-center text-teal group-hover:rotate-12 transition-transform">
-                                <theme.icon size={18} />
                             </div>
                         </div>
                     </motion.div>

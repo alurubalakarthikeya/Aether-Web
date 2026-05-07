@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Sparkles, Heart, Sprout, Moon } from 'lucide-react';
 import { TerminalLog, InsightCard, HabitSprout, NodeBuilder } from './ProductPanels';
 
@@ -40,58 +41,49 @@ export default function AppPreview() {
                 >
                     <div className="rounded-[48px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(43,85,72,0.3)] bg-white border-[10px] border-white ring-1 ring-black/5 aspect-[9/20] relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none z-10" />
-                        <img
+                        <Image
                             src="/assets/screenshot-1.png"
                             alt="Aether Mobile App"
+                            width={280}
+                            height={600}
                             className="w-full h-full object-cover object-top scale-[1.015]"
+                            priority
                         />
                     </div>
                 </motion.div>
 
                 {/* 1. Pet Evolution (Top Left of Screen) */}
                 <motion.div
-                    initial={{ opacity: 0, x: -40, y: -20 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0 }}
-                    animate={{ y: [0, -8, 0] }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{
-                        duration: 1, delay: 0.4,
-                        y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    style={{ willChange: 'transform' }}
-                    className="absolute left-[-35px] top-[40px] z-30 scale-90"
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    style={{ willChange: 'opacity' }}
+                    className="absolute left-[-12px] top-[20px] z-30 scale-90"
                 >
                     <NodeBuilder />
                 </motion.div>
 
                 {/* 2. Terminal Log (Middle Right) */}
                 <motion.div
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    animate={{ y: [0, -6, 0] }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{
-                        duration: 1, delay: 0.6,
-                        y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-                    }}
-                    style={{ willChange: 'transform' }}
-                    className="absolute right-[-25px] top-[260px] z-30 scale-90"
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    style={{ willChange: 'opacity' }}
+                    className="absolute right-[-25px] top-[240px] z-30 scale-90"
                 >
                     <TerminalLog />
                 </motion.div>
 
                 {/* 3. Habit Sprout (Bottom Left of Screen) */}
                 <motion.div
-                    initial={{ opacity: 0, x: -40, y: 40 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0 }}
-                    animate={{ y: [0, -10, 0] }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{
-                        duration: 1, delay: 0.8,
-                        y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
-                    }}
-                    style={{ willChange: 'transform' }}
-                    className="absolute left-[-15px] bottom-[40px] z-50 scale-105"
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    style={{ willChange: 'opacity' }}
+                    className="absolute left-[5px] bottom-[60px] z-50 scale-105"
                 >
                     <HabitSprout />
                 </motion.div>

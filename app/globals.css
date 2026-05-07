@@ -236,6 +236,74 @@ h3 {
   pointer-events: none;
 }
 
+/* ── Short Screen Responsiveness ── */
+@media (max-height: 820px) {
+  .hero-compact-section {
+    padding-top: 5rem !important;
+  }
+
+  .hero-compact-text h1 {
+    font-size: 24px !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .hero-compact-text p {
+    font-size: 12.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-compact-island {
+    transform: scale(0.55) !important;
+    margin-top: -20px !important;
+    margin-bottom: -10px !important;
+  }
+
+  .hero-compact-card {
+    padding: 0.75rem !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .hero-compact-card .btn-aether {
+    height: 2.75rem !important;
+    font-size: 12px !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .hero-compact-card .w-6.h-6 {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+
+  nav.fixed {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  nav.fixed .btn-aether {
+    height: 2.5rem !important;
+    font-size: 11px !important;
+  }
+}
+
+/* ── Performance Tuning ── */
+#hero,
+#features,
+#philosophy,
+#preview,
+#showcase,
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+
+[class*="blur-"] {
+  contain: paint;
+}
+
 .perspective-1000 {
   perspective: 1000px;
+  will-change: transform;
 }
