@@ -19,7 +19,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-[100dvh] flex flex-col overflow-hidden px-6 pt-24 hero-compact-section" id="hero">
+        <section className="relative min-h-[100dvh] flex flex-col overflow-hidden px-6 pt-24 hero-compact-section gap-12" id="hero">
             {/* Ambient glow blobs */}
             <div className="absolute top-[10%] -left-16 w-64 h-64 rounded-full bg-mint/30 blur-[100px] opacity-40 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 8s ease-in-out infinite' }} />
             <div className="absolute top-[40%] -right-12 w-56 h-56 rounded-full bg-foam/40 blur-[100px] opacity-50 will-change-[transform,opacity]" style={{ animation: 'pulse-glow 10s ease-in-out infinite 2s' }} />
@@ -29,7 +29,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
-                className="self-start mt-4 max-w-[90%] relative z-20 hero-compact-text"
+                className="self-start mt-4 max-w-[90%] relative z-20"
             >
                 <div className="flex items-center gap-2 mb-1">
                     <span className="font-[var(--font-pixel)] text-[11px] text-sage tracking-[4px] uppercase">Your Emotional Companion</span>
@@ -41,7 +41,7 @@ export default function Hero() {
             </motion.div>
 
             {/* ── Island scene ── */}
-            <div className="flex-1 flex items-center justify-center relative my-4 perspective-1000 hero-compact-island">
+            <div className="flex-1 flex items-center justify-center relative my-4 perspective-1000">
                 {/* Secondary floating island - Left Middle */}
 
                 <motion.div
@@ -133,7 +133,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="glass-heavy rounded-[40px] p-6 pb-12 flex flex-col gap-4 relative z-30 mt-auto -mx-6 mb-4 shadow-[0_-20px_60px_rgba(43,85,72,0.15)] hero-compact-card"
+                className="glass-heavy rounded-[40px] p-6 pb-12 flex flex-col gap-4 relative z-30 mt-auto -mx-6 mb-4 shadow-[0_-20px_60px_rgba(43,85,72,0.15)]"
             >
                 <div className="flex flex-col gap-3">
 
