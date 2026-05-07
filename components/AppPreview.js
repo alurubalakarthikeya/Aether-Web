@@ -1,65 +1,100 @@
 "use client";
 import { motion } from 'framer-motion';
+import { Sparkles, Heart, Sprout, Moon } from 'lucide-react';
+import { TerminalLog, InsightCard, HabitSprout, NodeBuilder } from './ProductPanels';
 
 export default function AppPreview() {
     return (
-        <section className="relative px-6 py-20 overflow-hidden" id="preview">
-            <div className="absolute -left-20 top-10 w-56 h-56 rounded-full bg-mint/25 blur-3xl opacity-30" style={{ animation: 'pulse-glow 8s ease-in-out infinite' }} />
-
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8 }}
-                className="mb-10 text-center"
-            >
-                <span className="font-[var(--font-pixel)] text-[11px] text-sage uppercase tracking-[3px]">✦ Preview</span>
-                <h2 className="text-[24px] mt-1.5 text-teal mx-auto max-w-[240px]">See Aether in action</h2>
-            </motion.div>
-
-            {/* Staggered phones - Deep zoom to eliminate gaps */}
-            <div className="relative w-full h-[500px] mt-2">
-                {/* Back phone - tilted left */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30, y: 50, rotate: -8 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0, rotate: -6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="absolute left-0 top-0 w-[58%] z-10"
-                >
-                    <div className="rounded-[44px] overflow-hidden shadow-2xl bg-[#E8F4F0] border-[10px] border-white ring-1 ring-black/5 aspect-[9/19.5]">
-                        <img
-                            src="/assets/screenshot-2.png"
-                            alt="Dashboard"
-                            className="w-full h-full object-cover scale-99 object-top"
-                        />
-                    </div>
-                </motion.div>
-
-                {/* Front phone - tilted right, overlapping */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30, y: 70, rotate: 6 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0, rotate: 6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute right-0 top-14 w-[62%] z-20"
-                >
-                    <div className="rounded-[44px] overflow-hidden shadow-[0_40px_80px_-20px_rgba(43,85,72,0.35)] bg-[#E8F4F0] border-[10px] border-white ring-1 ring-black/5 aspect-[9/19.5]">
-                        <img
-                            src="/assets/screenshot-1.png"
-                            alt="Journal"
-                            className="w-full h-full object-cover scale-101 object-top"
-                        />
-                    </div>
-                </motion.div>
+        <section className="relative px-6 py-24 overflow-hidden bg-cloud/30" id="preview">
+            {/* Ambient Background */}
+            <div className="absolute inset-0 z-0 opacity-50">
+                <div className="absolute -left-20 top-10 w-64 h-64 rounded-full bg-mint/15 blur-[100px]" />
+                <div className="absolute -right-20 bottom-10 w-64 h-64 rounded-full bg-foam/15 blur-[100px]" />
             </div>
 
-            <div className="flex justify-center mt-12">
-                <div className="flex gap-1.5">
-                    {[...Array(3)].map((_, i) => (
-                        <div key={i} className={`w-2.5 h-1 rounded-full ${i === 0 ? 'bg-teal w-6' : 'bg-teal/20'}`} />
-                    ))}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative z-10 text-center mb-16"
+            >
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-mint/10 text-teal rounded-full mb-4 border border-mint/20">
+                    <Sparkles size={12} className="animate-pulse" />
+                    <span className="font-[var(--font-pixel)] text-[9px] uppercase tracking-widest">Aether Preview</span>
                 </div>
+                <h2 className="text-[28px] text-teal leading-tight mb-4">A safe space that<br />grows with you.</h2>
+                <p className="text-[14px] text-sage/80 max-w-[280px] mx-auto leading-relaxed">
+                    Experience deep reflections and nurture your companion&apos;s evolution in a cinematic world.
+                </p>
+            </motion.div>
+
+            {/* Immersive Staggered Mockup with Overlays */}
+            <div className="relative z-10 w-full h-[666px] flex flex-col items-center">
+                {/* 1. Main Phone Mockup */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    className="relative z-20 w-[86%] max-w-[280px]"
+                >
+                    <div className="rounded-[48px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(43,85,72,0.3)] bg-white border-[10px] border-white ring-1 ring-black/5 aspect-[9/20] relative">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none z-10" />
+                        <img
+                            src="/assets/screenshot-1.png"
+                            alt="Aether Mobile App"
+                            className="w-full h-full object-cover object-top scale-[1.015]"
+                        />
+                    </div>
+                </motion.div>
+
+                {/* 1. Pet Evolution (Top Left of Screen) */}
+                <motion.div
+                    initial={{ opacity: 0, x: -40, y: -20 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    animate={{ y: [0, -8, 0] }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 1, delay: 0.4,
+                        y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    style={{ willChange: 'transform' }}
+                    className="absolute left-[-35px] top-[40px] z-30 scale-90"
+                >
+                    <NodeBuilder />
+                </motion.div>
+
+                {/* 2. Terminal Log (Middle Right) */}
+                <motion.div
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    animate={{ y: [0, -6, 0] }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 1, delay: 0.6,
+                        y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                    }}
+                    style={{ willChange: 'transform' }}
+                    className="absolute right-[-25px] top-[260px] z-30 scale-90"
+                >
+                    <TerminalLog />
+                </motion.div>
+
+                {/* 3. Habit Sprout (Bottom Left of Screen) */}
+                <motion.div
+                    initial={{ opacity: 0, x: -40, y: 40 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    animate={{ y: [0, -10, 0] }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 1, delay: 0.8,
+                        y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
+                    }}
+                    style={{ willChange: 'transform' }}
+                    className="absolute left-[-15px] bottom-[40px] z-50 scale-105"
+                >
+                    <HabitSprout />
+                </motion.div>
             </div>
         </section>
     );

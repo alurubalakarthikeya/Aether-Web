@@ -1,14 +1,15 @@
 "use client";
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Leaf, Sun, Moon, Flame, Wind } from 'lucide-react';
+import { Heart, Leaf, Sun, Moon, Sparkles, Wind } from 'lucide-react';
 
 const blocks = [
     { icon: Leaf, title: 'Nature', desc: 'Growth is silent', span: 'col-span-1 row-span-1', color: 'bg-mint' },
-    { icon: Heart, title: 'Softness', desc: 'Be kind to your soul', span: 'col-span-1 row-span-2', color: 'bg-sage' },
-    { icon: Sun, title: 'Light', desc: 'One day at a time', span: 'col-span-1 row-span-1', color: 'bg-foam' },
-    { icon: Wind, title: 'Breath', desc: 'Just breathe through it', span: 'col-span-2 row-span-1', color: 'bg-teal' },
-    { icon: Moon, title: 'Peace', desc: 'Rest is not lazy', span: 'col-span-1 row-span-1', color: 'bg-mint' },
-    { icon: Flame, title: 'Grit', desc: 'Keep showing up', span: 'col-span-1 row-span-1', color: 'bg-sage' },
+    { icon: Heart, title: 'Gamification', desc: 'Change to score', span: 'col-span-1 row-span-2', color: 'bg-sage' },
+    { icon: Sun, title: 'Pets', desc: 'Digital Companions', span: 'col-span-1 row-span-1', color: 'bg-foam' },
+    { icon: Wind, title: 'Journaling', desc: 'Write through it', span: 'col-span-2 row-span-1', color: 'bg-teal' },
+    { icon: Moon, title: 'Psychology', desc: 'for your mind', span: 'col-span-1 row-span-1', color: 'bg-mint' },
+    { icon: Sparkles, title: 'Experience', desc: 'Modern Smooth UI', span: 'col-span-1 row-span-1', color: 'bg-sage' },
 ];
 
 export default function Philosophy() {
@@ -26,10 +27,10 @@ export default function Philosophy() {
                 className="relative z-10 mb-8"
             >
                 <span className="font-[var(--font-pixel)] text-[11px] text-sage uppercase tracking-[3px]">✦ Philosophy</span>
-                <h2 className="text-[26px] mt-2 text-teal leading-tight">Rooted in<br />Consistency</h2>
+                <h2 className="text-[26px] mt-2 text-teal leading-tight">Rooted on<br />Healing</h2>
             </motion.div>
 
-            <div className="relative z-10 grid grid-cols-2 auto-rows-[88px] gap-3">
+            <div className="relative z-10 grid grid-cols-2 auto-rows-[100px] gap-3">
                 {blocks.map((b, i) => {
                     const Icon = b.icon;
                     return (
@@ -40,7 +41,7 @@ export default function Philosophy() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             className={`
-                ${b.span} ${b.color} rounded-[32px] p-5
+                ${b.span} ${b.color} rounded-[32px] p-4
                 flex flex-col justify-between text-white
                 relative overflow-hidden cursor-default
                 group hover:brightness-105 transition-all duration-500 shadow-sm

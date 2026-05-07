@@ -14,8 +14,15 @@ const doto = Doto({
 });
 
 export const metadata = {
-  title: 'Aether — Mental Wellness',
+  title: 'AetherMind',
   description: 'A calm space to reflect, understand yourself, and grow.',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }) {

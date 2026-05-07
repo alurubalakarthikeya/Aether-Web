@@ -20,7 +20,7 @@ export default function Navbar() {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="fixed top-0 left-0 right-0 z-50 flex justify-center px-5 pt-6 pointer-events-none"
         >
-            <nav className="pointer-events-auto w-full max-w-[440px] flex items-center justify-between px-4 h-10 rounded-full transition-all duration-500 glass">
+            <nav className="pointer-events-auto w-full max-w-[440px] flex items-center justify-between px-5 h-12 rounded-full transition-all duration-500 bg-white/40 backdrop-blur-xl border border-white/60">
                 <span className="font-[var(--font-pixel)] text-[15px] tracking-[3px] text-teal">AETHER</span>
 
                 <div className="hidden sm:flex gap-4 items-center">
@@ -41,7 +41,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -6, scale: 0.98 }}
                         transition={{ duration: 0.25 }}
-                        className="absolute top-full left-5 right-5 mt-2 glass-heavy rounded-2xl p-4 text-center pointer-events-auto"
+                        className="absolute top-full left-5 right-5 mt-2 bg-white/60 backdrop-blur-2xl border border-white/80 rounded-[32px] p-6 text-center pointer-events-auto shadow-2xl"
                     >
                         <a href="#features" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Features</a>
                         <a href="#preview" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Preview</a>

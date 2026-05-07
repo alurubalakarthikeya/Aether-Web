@@ -1,0 +1,68 @@
+"use client";
+import { motion } from 'framer-motion';
+import { Home, Sun, Moon, Wind, Sprout } from 'lucide-react';
+
+const themes = [
+    { title: "Foothills of Foam", desc: "A soft, misty valley for quiet reflection.", bg: "bg-foam/40", icon: Wind },
+    { title: "Minty Meadows", desc: "Vibrant greens for habit growth sessions.", bg: "bg-mint/20", icon: Sprout },
+    { title: "Starlit Sanctuary", desc: "Deep teals for nighttime dream recording.", bg: "bg-teal/10", icon: Moon }
+];
+
+export default function WorldEnvironment() {
+    return (
+        <section className="relative px-6 py-24 bg-snow/50" id="world">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal/10 to-transparent" />
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="mb-12"
+            >
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal text-white rounded-full mb-4">
+                    <Home size={12} />
+                    <span className="font-[var(--font-pixel)] text-[9px] uppercase tracking-widest">Aether</span>
+                </div>
+
+                <h2 className="text-[28px] text-teal leading-tight max-w-[280px]">Our upcoming features</h2>
+                <p className="text-[14px] text-sage/80 mt-4 leading-relaxed">Customize your companion&apos;s home to reflect your inner state.</p>
+            </motion.div>
+
+            <div className="space-y-6">
+                {themes.map((theme, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className={`${theme.bg} p-6 rounded-[32px] border border-white/60 relative overflow-hidden group`}
+                    >
+                        <div className="relative z-10 flex items-center justify-between">
+                            <div>
+                                <h3 className="text-[16px] font-semibold text-teal">{theme.title}</h3>
+                                <p className="text-[12px] text-sage/70 mt-1">{theme.desc}</p>
+                            </div>
+                            <div className="w-10 h-10 rounded-2xl bg-white/40 flex items-center justify-center text-teal group-hover:rotate-12 transition-transform">
+                                <theme.icon size={18} />
+                            </div>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-12 p-6 glass-light rounded-[32px] flex items-center gap-4 border border-white/80"
+            >
+                <div className="flex gap-2">
+                    <Sun size={20} className="text-teal" />
+                    <Moon size={20} className="text-sage opacity-40" />
+                </div>
+                <p className="text-[11px] text-sage leading-snug">Themes transition gently based on your local time and mood patterns.</p>
+            </motion.div>
+        </section>
+    );
+}
