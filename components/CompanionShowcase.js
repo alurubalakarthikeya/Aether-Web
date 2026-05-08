@@ -11,7 +11,6 @@ export default function CompanionShowcase() {
                 viewport={{ once: true }}
                 className="text-center mb-16 relative z-10"
             >
-                <span className="font-[var(--font-pixel)] text-[10px] text-sage tracking-[4px] uppercase mb-2 block">The Emotional Hook</span>
                 <h2 className="text-[32px] text-teal leading-tight">More than a chatbot.</h2>
             </motion.div>
 

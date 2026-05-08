@@ -19,13 +19,9 @@ export default function AppPreview() {
                 viewport={{ once: true }}
                 className="relative z-10 text-center mb-16"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-mint/10 text-teal rounded-full mb-4 border border-mint/20">
-                    <Sparkles size={12} className="animate-pulse" />
-                    <span className="font-[var(--font-pixel)] text-[9px] uppercase tracking-widest">Aether Preview</span>
-                </div>
                 <h2 className="text-[28px] text-teal leading-tight mb-4">A safe space that<br />grows with you.</h2>
                 <p className="text-[14px] text-sage/80 max-w-[280px] mx-auto leading-relaxed">
-                    Experience deep reflections and nurture your companion&apos;s evolution in a cinematic world.
+                    Share your thoughts in a world that evolves with you.
                 </p>
             </motion.div>
 

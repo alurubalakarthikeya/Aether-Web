@@ -36,7 +36,7 @@ export default function Hero() {
                 </div>
                 <h1 className="text-[36px] leading-tight tracking-[6px] mb-2 text-teal font-[var(--font-pixel)]">AETHER</h1>
                 <p className="text-[17px] text-sage leading-relaxed font-medium">
-                    Meet the AI <span className="text-teal underline decoration-mint underline-offset-4 font-semibold">wellness companion</span> that grows at your pace.
+                    Meet the AI <span className="text-teal underline decoration-mint underline-offset-4 font-semibold">designed</span> to understand and grow with you.
                 </p>
             </motion.div>
 
@@ -138,7 +138,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-3">
 
                     <a href="#preview" className="btn-aether bg-white/60 text-sage rounded-2xl h-14 text-[14px] border border-white/80 hover:bg-white/90 no-underline w-full flex items-center justify-center gap-2 shadow-[inset_0_2px_10px_rgba(61,122,108,0.12)]">
-                        Explore the World
+                        Explore Aether
                     </a>
                     <a href="/assets/aether_v1.apk" download="aether_v1.apk" className="btn-aether btn-glow bg-teal text-white rounded-2xl h-14 text-[15px] hover:brightness-110 active:scale-95 transition-all no-underline w-full group overflow-hidden">
                         <span className="relative z-10 flex items-center gap-2">
@@ -165,8 +165,8 @@ export default function Hero() {
                         ))}
                     </div>
                     <div className="flex flex-col items-start translate-x-1">
-                        <span className="text-[12px] text-teal leading-none">43 Active</span>
-                        <span className="text-[7.5px] text-sage/60 uppercase font-[var(--font-pixel)] tracking-widest mt-1"> Testers in Aether</span>
+                        <span className="text-[12px] text-teal leading-none">Join Now!</span>
+                        <span className="text-[7.5px] text-sage/60 uppercase font-[var(--font-pixel)] tracking-widest mt-1">30+ Active Testers</span>
                     </div>
                 </div>
             </motion.div>

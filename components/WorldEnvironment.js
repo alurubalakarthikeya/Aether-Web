@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Home, Sun, Moon, Wind, Sprout } from 'lucide-react';
 
 const themes = [
-    { title: "Foothills of Foam", desc: "A soft, misty valley for quiet reflection.", bg: "bg-foam/40", icon: Wind },
-    { title: "Minty Meadows", desc: "Vibrant greens for habit growth sessions.", bg: "bg-mint/20", icon: Sprout },
-    { title: "Starlit Sanctuary", desc: "Deep teals for nighttime dream recording.", bg: "bg-teal/10", icon: Moon }
+    { title: "Gamification", desc: "Earn rewards for your progress.", bg: "bg-foam/40", icon: Wind },
+    { title: "Autonomous Pets", desc: "Train your own AI pet.", bg: "bg-mint/20", icon: Sprout },
+    { title: "Ambient Environments", desc: "Customize your companion's home to reflect your inner state.", bg: "bg-teal/10", icon: Moon }
 ];
 
 export default function WorldEnvironment() {
@@ -55,7 +55,7 @@ export default function WorldEnvironment() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mt-12 p-6 glass-light rounded-[32px] flex items-center gap-4 border border-white/80"
+                className="mt-12 p-6 glass-light rounded-[32px] flex items-center gap-4 border border-white/80 boxShadow-10"
             >
                 <div className="flex gap-2">
                     <Sun size={20} className="text-teal" />
