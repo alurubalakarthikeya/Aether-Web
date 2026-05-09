@@ -36,7 +36,7 @@ export default function Hero() {
                 </div>
                 <h1 className="text-[36px] leading-tight tracking-[6px] mb-2 text-teal font-[var(--font-pixel)]">AETHER</h1>
                 <p className="text-[17px] text-sage leading-relaxed font-medium">
-                    Meet the AI <span className="text-teal underline decoration-mint underline-offset-4 font-semibold">designed</span> to understand and grow with you.
+                    Meet the AI <span className="text-teal underline decoration-mint underline-offset-4 font-semibold">designed</span> to understand you.
                 </p>
             </motion.div>
 

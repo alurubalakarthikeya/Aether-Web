@@ -19,9 +19,9 @@ export default function AppPreview() {
                 viewport={{ once: true }}
                 className="relative z-10 text-center mb-16"
             >
-                <h2 className="text-[28px] text-teal leading-tight mb-4">A safe space that<br />grows with you.</h2>
+                <h2 className="text-[28px] text-teal leading-tight mb-4">A space that<br />listens to you.</h2>
                 <p className="text-[14px] text-sage/80 max-w-[280px] mx-auto leading-relaxed">
-                    Share your thoughts in a world that evolves with you.
+                    Share your thoughts to a world that evolves with you.
                 </p>
             </motion.div>
 
