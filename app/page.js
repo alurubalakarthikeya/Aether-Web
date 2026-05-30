@@ -14,27 +14,20 @@ import FloatingDownload from '../components/FloatingDownload';
 export default function Home() {
     return (
         <>
-            {/* Desktop Gate */}
-            <div className="desktop-gate">
-                <h2 className="text-3xl tracking-[4px]">AETHER</h2>
-                <p className="text-base text-sage max-w-[400px] leading-relaxed">
-                    This experience is designed for mobile.<br />
-                    Please visit on your phone to explore Aether.
-                </p>
-            </div>
-
-            {/* Mobile Content */}
-            <div className="mobile-content overflow-x-hidden bg-[#F5FAF8]">
+            {/* Main Application Layout */}
+            <div className="main-content overflow-x-hidden bg-[#F5FAF8] min-h-screen">
                 <PixelBackground />
-                <div className="max-w-[480px] mx-auto relative z-10">
+                <div className="w-full relative z-10 px-0 lg:px-6 max-w-[1440px] mx-auto">
                     <Navbar />
                     <Hero />
-                    <AppPreview />
-                    <CompanionShowcase />
-                    <Features />
-                    <WorldEnvironment />
-                    <DownloadPath />
-                    <SafetyTrust />
+                    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-6 lg:p-6 pb-24">
+                        <AppPreview />
+                        <CompanionShowcase />
+                        <Features />
+                        <WorldEnvironment />
+                        <DownloadPath />
+                        <SafetyTrust />
+                    </div>
                     <Philosophy />
                     <Footer />
                 </div>

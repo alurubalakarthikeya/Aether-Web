@@ -15,42 +15,56 @@ const tiles = [
 
 export default function Features() {
     return (
-        <section className="relative px-6 py-24 bg-[#E5F5F0]/30" id="features">
-            <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-14 relative z-10"
-            >
-                <div className="flex items-center gap-3 mb-2">
-                    <Sparkles size={14} className="text-[#518B7A]" />
-                    <span className="font-[var(--font-pixel)] text-[12px] text-sage tracking-[4px] uppercase">Features</span>
-                </div>
-                <h2 className="text-[28px] font-[var(--font-pixel)] text-[#518B7A] tracking-[-1px] leading-[1.1]">
-                    Tools for your mind
-                </h2>
-            </motion.div>
+        <section className="relative px-6 py-24 lg:p-10 bg-[#E5F5F0]/30 lg:bg-white/40 lg:border lg:border-white/60 lg:rounded-[40px] lg:shadow-sm h-full flex flex-col" id="features">
+            <div className="mx-auto w-full flex-1 flex flex-col">
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-10 relative z-10"
+                >
+                    <div className="flex items-center gap-3 mb-2">
+                        <Sparkles size={14} className="text-[#518B7A]" />
+                        <span className="font-[var(--font-pixel)] text-[12px] text-sage tracking-[4px] uppercase">Features</span>
+                    </div>
+                    <h2 className="text-[28px] lg:text-[36px] font-[var(--font-pixel)] text-[#518B7A] tracking-[-1px] leading-[1.1]">
+                        Tools for your mind
+                    </h2>
+                </motion.div>
 
-            <div className="flex flex-col gap-4 relative z-10">
-                {/* 1. Full-width top card */}
-                <FeatureCard tile={tiles[0]} className="w-full aspect-[4/1] h-auto" />
+                {/* Mobile Layout (unchanged) / Desktop Layout (2-col grid) */}
+                <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 relative z-10 flex-1">
+                    {/* 1. Psychological Test */}
+                    <FeatureCard tile={tiles[0]} className="w-full aspect-[4/1] lg:aspect-auto lg:h-full lg:col-span-2 lg:row-span-1" />
 
-                {/* 2. Complex Row: [Journal] | [Mood / Dreams] */}
-                <div className="grid grid-cols-2 gap-4">
-                    <FeatureCard tile={tiles[1]} className="aspect-square h-auto" />
-                    <div className="flex flex-col gap-4 h-full">
+                    {/* 2. Complex Row Mobile -> Separate columns Desktop */}
+                    <div className="grid grid-cols-2 lg:hidden gap-4">
+                        <FeatureCard tile={tiles[1]} className="aspect-square h-auto" />
+                        <div className="flex flex-col gap-4 h-full">
+                            <FeatureCard tile={tiles[2]} className="flex-1" />
+                            <FeatureCard tile={tiles[3]} className="flex-1" />
+                        </div>
+                    </div>
+
+                    {/* Desktop versions of Journal, Mood, Dreams */}
+                    <FeatureCard tile={tiles[1]} className="hidden lg:flex lg:col-span-1 lg:row-span-1 lg:aspect-auto lg:h-[320px]" />
+                    <div className="hidden lg:flex flex-col gap-6 h-full lg:col-span-1 lg:row-span-1">
                         <FeatureCard tile={tiles[2]} className="flex-1" />
                         <FeatureCard tile={tiles[3]} className="flex-1" />
                     </div>
-                </div>
 
-                {/* 3. Full-width middle card */}
-                <FeatureCard tile={tiles[4]} className="w-full aspect-[4/1] h-auto" />
+                    {/* 3. Psych Facts */}
+                    <FeatureCard tile={tiles[4]} className="w-full aspect-[4/1] lg:aspect-auto lg:h-[320px] lg:col-span-2 lg:row-span-1" />
 
-                {/* 4. Bottom row: [Growth] | [Safe Space] */}
-                <div className="grid grid-cols-2 gap-4">
-                    <FeatureCard tile={tiles[5]} className="aspect-[2/1] h-auto" />
-                    <FeatureCard tile={tiles[6]} className="aspect-[2/1] h-auto" />
+                    {/* 4. Bottom row: Growth | Safe Space */}
+                    <div className="grid grid-cols-2 lg:hidden gap-4">
+                        <FeatureCard tile={tiles[5]} className="aspect-[2/1] h-auto" />
+                        <FeatureCard tile={tiles[6]} className="aspect-[2/1] h-auto" />
+                    </div>
+
+                    {/* Desktop versions of Growth, Safe Space */}
+                    <FeatureCard tile={tiles[5]} className="hidden lg:flex lg:col-span-1 lg:row-span-1 lg:aspect-auto lg:h-[320px]" />
+                    <FeatureCard tile={tiles[6]} className="hidden lg:flex lg:col-span-1 lg:row-span-1 lg:aspect-auto lg:h-[320px]" />
                 </div>
             </div>
         </section>
