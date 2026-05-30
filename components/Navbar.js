@@ -46,7 +46,7 @@ export default function Navbar() {
                         <a href="#features" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Features</a>
                         <a href="#preview" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] border-b border-teal/5 no-underline">Preview</a>
                         <a href="#download" onClick={() => setOpen(false)} className="block py-2.5 text-teal text-[14px] no-underline">Download</a>
-                        <a href="/assets/aether_v1.apk" download="aether_v1.apk" onClick={() => setOpen(false)} className="mt-3 btn-aether bg-sage text-white w-full rounded-xl text-[13px] h-10 no-underline">
+                        <a href="/assets/aether_v2.apk" download="aether_v2.apk" onClick={() => setOpen(false)} className="mt-3 btn-aether bg-sage text-white w-full rounded-xl text-[13px] h-10 no-underline">
                             <Download size={14} /> Download APK
                         </a>
                     </motion.div>

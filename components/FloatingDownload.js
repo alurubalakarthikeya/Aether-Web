@@ -12,7 +12,7 @@ export default function FloatingDownload() {
             className="fixed bottom-8 right-4 z-[100]"
         >
             <a
-                href="/assets/aether_v1.apk"
+                href="/assets/aether_v2.apk"
                 download
                 className="w-10 h-10 rounded-full bg-teal text-white flex items-center justify-center shadow-lg hover:brightness-110 hover:scale-105 active:scale-95 transition-all duration-300 group"
             >

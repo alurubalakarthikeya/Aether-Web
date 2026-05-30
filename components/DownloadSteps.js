@@ -61,15 +61,15 @@ export default function DownloadPath() {
                     className="mt-16 max-w-[420px] mx-auto lg:hidden"
                 >
                     <a
-                        href="/assets/aether_v1.apk"
-                        download="aether_v1.apk"
+                        href="/assets/aether_v2.apk"
+                        download="aether_v2.apk"
                         className="w-full glass h-[66px] rounded-2xl flex items-center px-5 gap-4 hover:bg-white/40 transition-all duration-300 no-underline group"
                     >
                         <img src="/assets/logo.png" alt="Aether Logo" className="w-11 h-11 rounded-xl border border-teal/10 p-0.5 bg-white/40 group-hover:scale-105 transition-transform duration-300" />
                         <div className="flex flex-col items-start">
                             <span className="text-teal font-semibold text-[14px]">Aether</span>
                             <span className="text-[10px] text-sage/60 font-[var(--font-pixel)] uppercase tracking-[1px]">
-                                v1.0.0 • 71 MB • Android
+                                v2.0.0 • 71 MB • Android
                             </span>
                         </div>
                         <div className="ml-auto w-8 h-8 rounded-full bg-teal/5 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white transition-colors">

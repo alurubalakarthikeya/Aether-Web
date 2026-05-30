@@ -65,7 +65,7 @@ export default function Footer() {
                             <div className="flex items-center gap-3 p-3 rounded-2xl bg-mint/10 border border-mint/20 cursor-default">
                                 <Download size={18} className="text-teal" />
                                 <div className="flex flex-col">
-                                    <span className="text-[12px] text-teal font-bold uppercase tracking-wider">v1.0.0 Stable</span>
+                                    <span className="text-[12px] text-teal font-bold uppercase tracking-wider">v2.0.0 Stable</span>
                                     <span className="text-[10px] text-sage/70 font-[var(--font-pixel)]">Available for Android</span>
                                 </div>
                             </div>

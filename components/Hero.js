@@ -96,7 +96,7 @@ export default function Hero() {
                         <a href="#preview" className="btn-aether bg-white/60 text-sage rounded-2xl h-14 text-[14px] border border-white/80 hover:bg-white/90 no-underline w-full flex items-center justify-center gap-2 shadow-[inset_0_2px_10px_rgba(61,122,108,0.12)]">
                             Explore Aether
                         </a>
-                        <a href="/assets/aether_v1.apk" download="aether_v1.apk" className="btn-aether btn-glow bg-teal text-white rounded-2xl h-14 text-[15px] hover:brightness-110 active:scale-95 transition-all no-underline w-full group overflow-hidden">
+                        <a href="/assets/aether_v2.apk" download="aether_v2.apk" className="btn-aether btn-glow bg-teal text-white rounded-2xl h-14 text-[15px] hover:brightness-110 active:scale-95 transition-all no-underline w-full group overflow-hidden">
                             <span className="relative z-10 flex items-center gap-2">
                                 Download Aether
                             </span>
