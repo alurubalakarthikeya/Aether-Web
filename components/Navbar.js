@@ -20,13 +20,13 @@ export default function Navbar() {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="fixed top-0 left-0 right-0 z-50 flex justify-center px-5 pt-6 pointer-events-none"
         >
-            <nav className="pointer-events-auto w-full max-w-7xl flex items-center justify-between px-6 md:px-8 h-12 md:h-14 lg:h-16 rounded-full transition-all duration-500 bg-white/40 backdrop-blur-xl border border-white/60">
-                <span className="font-[var(--font-pixel)] text-[15px] md:text-[18px] tracking-[3px] text-teal">AETHER</span>
+            <nav className="pointer-events-auto w-full max-w-[440px] lg:max-w-[720px] xl:max-w-[960px] flex items-center justify-between px-5 lg:px-8 h-12 lg:h-14 rounded-full transition-all duration-500 bg-white/40 backdrop-blur-xl border border-white/60">
+                <span className="font-[var(--font-pixel)] text-[15px] lg:text-[17px] tracking-[3px] text-teal">AETHER</span>
 
-                <div className="hidden sm:flex gap-6 lg:gap-8 items-center">
-                    <a href="#features" className="text-teal/60 hover:text-teal transition-colors text-[13px] md:text-[14px] font-medium no-underline">Features</a>
-                    <a href="#preview" className="text-teal/60 hover:text-teal transition-colors text-[13px] md:text-[14px] font-medium no-underline">Preview</a>
-                    <a href="#download" className="text-teal/60 hover:text-teal transition-colors text-[13px] md:text-[14px] font-medium no-underline">Download</a>
+                <div className="hidden sm:flex gap-4 lg:gap-8 items-center">
+                    <a href="#features" className="text-teal/60 hover:text-teal transition-colors text-[12px] lg:text-[14px] font-medium no-underline">Features</a>
+                    <a href="#preview" className="text-teal/60 hover:text-teal transition-colors text-[12px] lg:text-[14px] font-medium no-underline">Preview</a>
+                    <a href="#download" className="text-teal/60 hover:text-teal transition-colors text-[12px] lg:text-[14px] font-medium no-underline">Download</a>
                 </div>
 
                 <button onClick={() => setOpen(!open)} className="sm:hidden p-1 border-none bg-transparent cursor-pointer">
